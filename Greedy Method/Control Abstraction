@@ -1,0 +1,11 @@
+Algorithm Greedy(a,n){
+  Solution:=null;
+  for(i:=1 to n) do{
+     x:=select(a);
+     if(Feasible(Solution,x)){
+         Solution:=Union(Solution,x);
+    }
+}
+return Solution;
+}
+   
