@@ -1,0 +1,15 @@
+Algorithm GreedyKanpsack(m,n){
+   for i:=1 to n do
+      x[i]:=0.0;
+   u:=m;
+   for i:=1 to n do{
+       if(w[i] > u) then{
+             break;
+        }
+    x[i]:= 1.0;
+    u:= u-w[i];
+    }
+    if(i<=n) then
+       x:= u/w[i];
+}
+    
