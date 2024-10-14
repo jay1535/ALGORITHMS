@@ -1,0 +1,23 @@
+Algorithm Kruskal(E,cost,n,t){
+   Construct a heap out of the edge costs using Heapify;
+   for( i:= 1 to n) do
+     parent[i] := -1;
+   i := 0;
+   mincost := 0.0;
+   while((i< n-1) and (heap not empty)) do{
+     Delete a minimun cost edge (u,v) from the heap and reheapify using Adjust;
+     j := Find(u);
+     k := Find(v);
+     if(j!= k) then{
+       i:= i+1;
+       t[i,1]:=u;
+       t[i,2]:=v;
+       mincost := mincost+cost[u,v];
+       Union(j,k);
+}
+}
+if(i!= n-1) then
+  write("No Spanning Tree");
+else
+  return mincost;
+}
