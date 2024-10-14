@@ -1,0 +1,17 @@
+Algorithm JobSequencing(d,J,n){
+   d[0] := J[0] := 0;
+   J[1] := 1;
+   k[1] := 1; 
+   for( i:= 2 to n ) do{
+       r := k;
+       while((d[J[r]] > d[i]) and (d [J[r]] != r)) do{
+          r := r-1;}
+       if((d[J[r]] <= d[i]) and d[i] > r)) then{
+          for( q:= k to (r+1) step-1 ) do
+             J[q+1] := J[q];
+           J[r+1] := i;
+           k := k+1;
+       }
+   }
+return k;
+}
