@@ -1,0 +1,15 @@
+Algorithm ShortestPath(v, cost, dist, n){
+   for( i:=1 to n) do{
+     S[i] := false;
+     dist[i] := cost[v, i];
+    }
+   S[v] :=true;
+   dist[v]:= 0.0;
+   for( num:= 2 to n-1) do{
+     Choose u from among those vertices not in S such that dist[u] is minimum;
+     S[u] := true;
+     for( each w adjacent to u with S[w] = false) do
+        if( dist[w] > dist[u] + cost[u, w]) then
+           dist[w] := dist[u] + cost[u,w];
+}
+}
