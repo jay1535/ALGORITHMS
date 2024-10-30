@@ -1,0 +1,10 @@
+Algorithm BellmanFord(V, cost, dist, n){
+   for(i:= 1 to n) do{
+      dist[i] := cost[v, i]; 
+   }
+   for(k := 2 to n-1 ) do
+      for( each u such that u != v and u has atleast one incoming edge) do
+         for each <i,u> in graph do 
+             if(dist[u] > dist[i] + cost[i,u]) then
+                dist[u] := dist[i] + cost[i,u];
+}
