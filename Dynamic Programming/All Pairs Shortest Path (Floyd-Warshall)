@@ -1,0 +1,9 @@
+Algorithm  Allpaths(cost, A, n){
+  for(i:= 1 to n) do
+      for( j:= 1 to n) do
+          A[i,j] := cost[i,j];
+  for(k:= 1 to n) do
+     for(i := 1 to n) do
+        for( j:= 1 to n) do
+           A[i,j] := min (A[i,j], A[i,k] + A[k,j])
+}
