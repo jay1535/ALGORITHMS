@@ -1,0 +1,13 @@
+Algorithm ForwardG(G, K, n, p){
+  cost[n] :=0.0;
+  for(j:=n-1 to 1) step-1 do{
+     let r be a vertex such that <j, r> is an edge of G and c[j, r] + cost[r] is minimum;
+     cost[j] := c [j,r] + cost[r];
+     d[j]:= r;
+   }
+  p[1] := 1;
+  p[k] := n;
+  for(j:= n to k-1) do{
+      p[j] := d[p[j-1]];
+}
+}
