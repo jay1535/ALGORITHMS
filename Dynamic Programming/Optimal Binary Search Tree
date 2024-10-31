@@ -1,0 +1,23 @@
+Algorithm OBST(p, q, n){
+   for(i := 0 to n-1 ) do {
+       w[i,i] := q[i];
+       r[i,i] := 0;
+       c[i,i] := 0.0;
+       w[i,i+1] := q[i] + q[i+1] + p[i+1];
+       r[i,i+1] := i+1;
+       c[i,i+1] := q[i] + q[i+1] + p[i+1];
+   }
+   w[n,n] := q[n] ;
+   r[n,n] :=  0;
+   c[n,n] :=  0.0;
+   for( m:= 2 to n) do{
+      for( i := 2 to n-m) do{
+         j := i+m;
+         w[i,j] := w[i, j-1] + p[j] + q[j];
+         k:= find (r, i, j);
+         c[i,j] := w[i,j] + c[i, k-1] + c[k, j];
+         r[i,j] := k;
+      }
+    } write (c[0,n], w[0,n], r[0,n]);
+}
+ 
