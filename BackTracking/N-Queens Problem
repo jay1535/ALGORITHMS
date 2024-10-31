@@ -1,0 +1,18 @@
+ Algorithm Place( k, i){
+  for(j := 1 to k-1) do 
+     if( (x[j] == 1) or (abs (x[j]-1) = abs (j-k) )) then 
+        return false;
+   return true;
+}
+
+Algorithm NQueens (K, n) {
+ for( i:= 1 to n) do {
+   if( place (k:i)) then{
+      x[k] := i;
+      if( k = n) then 
+         write(x[1:n]);
+      else 
+         NQueens(K+1);
+    }
+  }
+}
