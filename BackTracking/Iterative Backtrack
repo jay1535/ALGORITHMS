@@ -1,0 +1,13 @@
+Algorithm IBacktrack(n){
+  k := 1;
+  while(k != 0) do{
+    if( there remains an untired x[k] belongsTo T(x[1, x[2] .... x[k-1]) and Bk (x[1], x[2] .... x[k] is true) then {
+       if(x[1], x[2]... x[k] is a path to an answer node) then 
+           write(x[1 : k] );
+           k:= k+1;
+       }
+    else{
+       k := k-1;
+    }
+  }
+}
