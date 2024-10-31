@@ -20,4 +20,14 @@ Algorithm OBST(p, q, n){
       }
     } write (c[0,n], w[0,n], r[0,n]);
 }
- 
+
+
+Algorithm Find (c, r, i, j){
+   min = infinity;
+   for( m:= r[i,j-1] to  r[i+1, j])  
+      if( c[i,m-1] + c[m,j] < min) then {
+         min := c[i, m-1] + c[m,j];
+         l := m;
+      }
+  return l;
+}
