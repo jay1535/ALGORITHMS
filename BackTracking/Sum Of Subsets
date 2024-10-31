@@ -1,0 +1,11 @@
+Algorithm SumOfSub( S, k, r){
+  x[k] := 1;
+  if( S + w[k] = m) then 
+    write( x[1:k]);
+  else if( S + w[k] + w{k+1] <= m) then
+    SumOfSub( S+w[k]+k+1,  r-w[k]);
+  if((S + r-w[k] >= m) and (S+ w[k+1] <= m)) then {
+    x[k] := 0;
+    SumOfSub(S,k+1, r-w[k]);
+}
+}
