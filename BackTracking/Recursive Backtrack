@@ -1,0 +1,10 @@
+Algorithm RBacktrack(k) {
+  for(each x[k] belongsTo T(x[1],x[2].....x[k-1]) do{
+    if(Bk(x[1],x[2],....x[k] != 0) then {
+       if(x[1],x[2],....x[k] is a path to an answer node) then
+         write (x[1:k]);
+         if( k<n) then 
+            RBacktrack(k+1);
+      }
+  }
+}
