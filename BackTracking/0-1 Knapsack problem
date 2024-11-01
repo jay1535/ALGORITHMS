@@ -1,0 +1,38 @@
+Algorithm  BKanpsack(K, cp, cw){
+  if( cw +w[K] <= m) then{
+    y[k] := 1;
+    if( K<n) then 
+        BKnapsack(K+1, cp+p[K], cw+w[K]);
+    if((cp +p[K] > fp) and(K = n) ) then {
+        fp := cp + p[K];
+        fw :=  cw + w[K];
+        for( j := 1 to K) do
+          x[j] := y[j];
+        }
+    } 
+    if( Bound(cp, cw, k) >= fp) then {
+        y[k] := 0;
+        if( k< n) then
+          BKnapsack(K+1, cp, cw);
+        if( (cp > fp) and (k = n) ) then {
+           fp := cp; 
+           fw := cw;
+           for( j:= 1 to K) do {
+               x[j] := y[j];
+           }
+        }
+    }
+}
+
+Algorithm Bound (cp, cw, K) {
+ b := cp; c:= cw;
+ for( i := K+1 to n) do{
+    c := c+ w[i];
+    if( c< m) then 
+        b := b + p[i];
+    else {
+        return b + ( 1 - (c-m) ) / w[i] * p[i];
+    } return b;
+  }
+}
+
