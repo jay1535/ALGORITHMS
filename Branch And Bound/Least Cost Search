@@ -1,0 +1,18 @@
+Algorithm LSearch (t) {
+  if( *t is an answer node) then  out *t and return;
+  E := t;
+  Initialize the list of live nodes to be empty;
+  repeat {
+    for each child x of E  do{
+      if x is an answer node then output the path from x to t and return;
+        Add{x};
+        x -> parent := E;
+     }
+     if( there are  no more live nodes) then {
+        write (" No answer Nodes");
+          return ;
+    }
+    E := Least();
+    until (false);
+  }
+}
